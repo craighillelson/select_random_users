@@ -10,14 +10,13 @@ users = []
 
 # import a csv and throw it into a list
 with open('OktaPasswordHealth.csv') as f:
-	f_csv = csv.DictReader(f)
-	for row in f_csv:
-		users.append(row)
+    f_csv = csv.DictReader(f)
+    for row in f_csv:
+        users.append(row)
 
 # get the length of the list
 users_qty = len(users)
 print(users_qty)
 
-# number_of_users = len(lst)
-# for the number of users specified by the user, select a random user, throw 
+# for the number of users specified by the user, select a random user, throw
 # that user into a list random_user_lst and remove the same user from lst
