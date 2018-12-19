@@ -3,8 +3,7 @@ import csv
 import random
 
 # prompt user for how many random users they would like to review
-number_of_users = raw_input("How many random users would you like to audit? ")
-number_of_users = int(number_of_users)
+number_of_users = int(raw_input("How many random users would you like to audit? "))
 
 # create list to be populated
 users = []
