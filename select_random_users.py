@@ -1,30 +1,38 @@
-from collections import namedtuple
+# imports
+from datetime import date
 import csv
 import random
 
+# define today
+today = date.today()
+
 # prompt user for how many random users they would like to review
-number_of_users = int(raw_input("How many random users would you like to audit? "))
+number_of_users = int(raw_input
+	("How many random users would you like to audit? "))
 
 # create list to be populated
 users = []
 
-# import a csv and throw it into a list
-with open('OktaPasswordHealth.csv') as f:
-    f_csv = csv.DictReader(f)
-    for row in f_csv:
-        users.append(row)
-
+# open csv and throw contents into a list
+with open('OktaPasswordHealth.csv') as csvfile:  
+		reader = csv.DictReader(csvfile)
+		for row in reader:
+			user = row['Login']
+			users.append(user)
+	
 # get the length of the list
 users_qty = int(len(users))
 
-# random_numbers = random.sample(range(1, 10), 3)
-random_numbers = random.sample(range(1, users_qty), number_of_users)
+# create a list of random numbers within a range from 0 to the number of users
+# equal to the number specified by the user
+random_numbers = random.sample(range(0, users_qty), number_of_users)
 
 # write results to file
 with open('users_to_audit.txt', 'a') as text_file:
     for i in random_numbers:
-        text_file.write(str(users[i]))
+    	user = str(users[i])
+        text_file.write(user)
         text_file.write('\n')
 
 # update user
-print("'users_to_audit.txt' exported successfully")
+print("'%s_users_to_audit.txt' exported successfully") % (today)
