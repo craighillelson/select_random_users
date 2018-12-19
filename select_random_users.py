@@ -1,3 +1,4 @@
+from collections import namedtuple
 import csv
 import random
 
