@@ -4,5 +4,5 @@ Script to Select a Specified Number of users from an 'OktaPasswordHealth.csv' fo
 
 ## Instructions
 
-1. save 'OktaPasswordHealth.csv' and the script to the same directory
+1. save select_random_users.py and "OktaPasswordHealth.csv" to the same directory
 1. open Terminal and type "python select_random_users.py"
