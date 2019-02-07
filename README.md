@@ -1,6 +1,7 @@
 # Select Random Users
 
-Script to select a specified sumber of random users from an 'OktaPasswordHealth.csv' for auditing purposes.
+* Script to select a specified number of random users from an 'OktaPasswordHealth.csv' for auditing purposes.
+* Runs on Python 3.7.2
 
 ## Instructions
 
