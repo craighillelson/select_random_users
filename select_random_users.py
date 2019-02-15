@@ -1,9 +1,11 @@
 """ __doc__ """
 
 # imports
-from datetime import date
 import csv
 import random
+import re
+from datetime import date
+from collections import namedtuple
 
 # define today
 TODAY = date.today()
@@ -16,10 +18,8 @@ USERS = []
 
 # open csv and throw contents into a list
 with open('OktaPasswordHealth.csv') as csvfile:
-    # look at this
     READER = csv.DictReader(csvfile)
-    for row in READER:
-        USERS.append(row['Login'])
+    [USERS.append(row['Login']) for row in READER]
 
 
 # get the length of the list
@@ -30,8 +30,8 @@ USERS_QTY = int(len(USERS))
 RANDOM_NUMBERS = random.sample(range(0, USERS_QTY), NUMBER_OF_USERS)
 
 # write results to file
-USERS_TO_AUDIT = "%s_users_to_audit.txt" % (TODAY)
-with open(USERS_TO_AUDIT, 'a') as text_file:
+USERS_TO_AUDIT = f"{TODAY}_users_to_audit.txt"
+with open(USERS_TO_AUDIT, 'w') as text_file:
     for i in RANDOM_NUMBERS:
         user = str(USERS[i])
         text_file.write(user)
