@@ -3,9 +3,7 @@
 # imports
 import csv
 import random
-import re
 from datetime import date
-from collections import namedtuple
 
 # define today
 TODAY = date.today()
@@ -19,7 +17,8 @@ USERS = []
 # open csv and throw contents into a list
 with open('OktaPasswordHealth.csv') as csvfile:
     READER = csv.DictReader(csvfile)
-    [USERS.append(row['Login']) for row in READER]
+    for row in READER:
+        USERS.append(row['Login'])
 
 
 # get the length of the list
