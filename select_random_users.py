@@ -20,8 +20,7 @@ def populate_lst():
 def prompt_user():
     """Prompt user for the number of users they'd like to audit."""
     print('\nHow many random users would you like to audit?')
-    a = pyip.inputInt('> ', max=TOTAL_USERS)
-    return a
+    return pyip.inputInt('> ', max=TOTAL_USERS)
 
 
 def write_to_file():
